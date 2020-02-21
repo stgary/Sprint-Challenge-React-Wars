@@ -1,7 +1,12 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import StarCard from "./StarCard";
+import styled from "styled-components";
 
+const StarWars = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`;
 
 export default function NasaGrid() {
     const [char, setChar] = useState([]);
@@ -20,7 +25,7 @@ export default function NasaGrid() {
     }, []);
 
     return (
-        <div className = "StarWars">
+        <StarWars>
             {char.map(character => {
                 return <StarCard 
                 name={character.name}
@@ -29,6 +34,6 @@ export default function NasaGrid() {
                 birth={character.birth_year}
                 />;
             })}
-        </div>
+        </StarWars>
     );
 }
