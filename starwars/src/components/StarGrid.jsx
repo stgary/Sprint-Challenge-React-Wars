@@ -6,6 +6,7 @@ import styled from "styled-components";
 const StarWars = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `;
 
 export default function NasaGrid() {
@@ -32,6 +33,7 @@ export default function NasaGrid() {
                 height={character.height}
                 mass={character.mass}
                 birth={character.birth_year}
+                films={character.films}
                 />;
             })}
         </StarWars>
